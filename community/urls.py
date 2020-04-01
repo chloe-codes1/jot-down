@@ -8,4 +8,5 @@ urlpatterns = [
     path('review_detail/<int:pk>/', views.review_detail),
     path('delete_review/<int:pk>/', views.delete_review),
     path('update_review/<int:pk>', views.update_review),
+    path('search/', views.search),
     ]

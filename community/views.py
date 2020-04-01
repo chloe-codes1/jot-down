@@ -45,3 +45,13 @@ def update_review(request, pk):
     review.save()
 
     return redirect('/community/')
+
+def search(request):
+    keyword = request.GET.get('keyword')
+    results = Review.objects.filter(title__icontains=keyword)
+    context = {
+        'results': results,
+        'keyword': keyword,
+    }
+
+    return render(request,'community/search_result.html',context)

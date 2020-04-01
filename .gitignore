@@ -8,6 +8,10 @@
 
 *.sqlite3
 
+*.pyc
+
+*.pyo
+
 .c9/
 
 .cache/
@@ -15,3 +19,4 @@
 .local/
 
 .ipython/
+
