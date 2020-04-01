@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="mt-3 mb-4">Review List</h3>
+
+{% for review in reviews reversed%}
+
+<a href="/community/review_detail/{{ review.pk }}/" data-toggle="tooltip" data-placement="top" title="See Details">
+<div class="card text-white bg-dark my-2 w-100">
+  <div class="card-header d-flex justify-content-between"><h5>{{review.title}}  <span class="badge badge-warning mx-2">{{review.rank}}/5</span></h5> <p class="mb-0 pt-1">{{review.created_at|date:'Y-m-d H:i'}}</p></div>
+  <div class="card-body">
+    <p class="card-title">{{review.content}}</p>
+  </div>
+</div>
+<a/>
+{% empty %}
+<h4 class="mt-4 text-center">We are sorry!</h4>
+<p class="text-center">There's no review</p>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+*.bash_history
+
+*.gitconfig
+
+*.python_history
+
+*.env
+
+*.sqlite3
+
+.c9/
+
+.cache/
+
+.local/
+
+.ipython/
