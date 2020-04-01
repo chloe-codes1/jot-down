@@ -23,9 +23,18 @@ def create_review(request):
     
     return redirect('/community/')
 
+
 def review_detail(request, pk):
     review = Review.objects.get(id=pk)
     context = {
         'review':review
     }
     return render(request,'community/review_detail.html', context)
+
+
+def delete_review(request, pk):
+    review = Review.objects.get(id=pk)
+    review.delete()
+    return redirect('/community/')
+
+
