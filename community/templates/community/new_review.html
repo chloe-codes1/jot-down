@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h3>Write a review</h3>
+<h3>Write a note</h3>
 
 <form action="/community/create_review/" method="get">
 
@@ -15,11 +15,20 @@
     <label for="content">Content</label>
     <textarea type="text" class="form-control" name="content" rows="3" placeholder="Jot something down" required blank=False></textarea>
   </div>
-  <label for="customRange2">Rating</label>
-    0 <input type="range" class="custom-range" min="0" max="5" name="rank" required blank=False> 5
+  <label for="customRange2">Priority</label>
+    <input type="range" class="custom-range" min="0" max="5" name="rank" required blank=False>
+    <div class="d-flex justify-content-between" style='font-size:15px;'>
+      <span>0</span>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+    </div>
     <br>
     <br>
   <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="/community/" class="btn btn-secondary">Cancel</a>
 
 </form>
 

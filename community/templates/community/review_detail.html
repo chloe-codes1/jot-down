@@ -3,14 +3,14 @@
 
 {% block content %}
 <p class="float-right  mt-3 mb-3 pr-3"><a href="/community/"><strong>Back to list</strong></a></p>
-<h3 class="mt-3 mb-4">Review # <span id="review_pk">{{review.pk}}</span></h3>
+<h3 class="mt-3 mb-4">Note # <span id="review_pk">{{review.pk}}</span></h3>
 
 <form action="/community/update_review/{{review.pk}}" method="get">
 <div class="card text-white bg-dark my-2 w-100">
   <div class="card-header d-flex justify-content-between">
     <div class="d-flex align-items-center">
       <p><h4 id="review_title"> {{review.title}}</h4></p>
-      <span class="badge badge-warning ml-3 py-2 text-dark">{{review.rank}}/5 </span> 
+      <span class="badge badge-warning mx-2">Priority {{review.rank}}</span> 
     </div>
     <p class="mb-0 pt-1">{{review.created_at|date:'Y-m-d H:i'}} 
       <button type="button" class="btn btn-primary py-1 px-2 ml-2" id="update"><i class='fas fa-pencil-alt' style='font-size:20px;color:white'></i></button> 
@@ -34,12 +34,12 @@
       </div>
       <div class="modal-body text-center mt-2 mb-3">
       <h4 class="modal-title mb-3" id="exampleModalLabel">Are you sure?</h4>
-        Do you really want to delete review? <br>
+        Do you really want to delete note? <br>
         This process cannot be undone.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-danger"><a href="/community/delete_review/{{ review.pk }}/" class="text-white"> Delete</a></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
