@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+
+{% endblock %}
+
+
 
 {% block content %}
 
@@ -6,9 +14,9 @@
 
 {% for review in reviews reversed%}
 
-<a href="/community/review_detail/{{ review.pk }}/" data-toggle="tooltip" data-placement="top" title="See Details">
-<div class="card text-white bg-dark my-2 w-100">
-  <div class="card-header d-flex justify-content-between"><h5>{{review.title}}  <span class="badge badge-warning mx-2">{{review.rank}}/5</span></h5> <p class="mb-0 pt-1">{{review.created_at|date:'Y-m-d H:i'}}</p></div>
+<a class="text-decoration-none" href="/community/review_detail/{{ review.pk }}/" data-toggle="tooltip" data-placement="top" title="See Details">
+<div class="card hover text-white my-2 w-100"  onmouseover="this.style.backgroundColor='#868e96'" onmouseout="this.style.backgroundColor='#343A40'">
+  <div class="card-header d-flex justify-content-between"><h5>{{review.title}}  <span class="badge badge-warning mx-2">Rate {{review.rank}}</span></h5> <p class="mb-0 pt-1">{{review.created_at|date:'Y-m-d H:i'}}</p></div>
   <div class="card-body">
     <p class="card-title">{{review.content}}</p>
   </div>

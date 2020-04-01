@@ -38,3 +38,10 @@ def delete_review(request, pk):
     return redirect('/community/')
 
 
+def update_review(request, pk):
+    review = Review.objects.get(id=pk)
+    review.title = request.GET.get('title')
+    review.content = request.GET.get('content')
+    review.save()
+
+    return redirect('/community/')
