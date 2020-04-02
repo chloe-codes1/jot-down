@@ -33,6 +33,8 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
+*.swp
+*.swo
 ```
 
 <br>
@@ -159,4 +161,3 @@ application = StaticFilesHandler(get_wsgi_application())
 
 
 <br>
-
