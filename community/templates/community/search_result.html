@@ -7,8 +7,12 @@
 {% endblock %}
 
 {% block content %}
+<div class="d-flex justify-content-between">
 
 <h3 class="mt-3 mb-4">Search result for "{{keyword}}"</h3>
+  <p><a class="btn btn-outline-primary mt-4 mr-2" href="/community/new_review/" style='font-size:22px;'>Note down </a></p>
+
+</div>
 
 {% for result in results reversed%}
 
