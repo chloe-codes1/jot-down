@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Review
 
 # Create your views here.
@@ -20,7 +21,7 @@ def create_review(request):
     review.content = request.GET.get('content')
     review.rank = request.GET.get('rank')
     review.save()
-    
+    messages.info(request, 'Your post has been successfully published!')
     return redirect('/community/')
 
 

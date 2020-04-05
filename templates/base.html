@@ -14,6 +14,14 @@
     <title>Jot Down!</title>
 </head>
 <body>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
 
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark border border-left-0 border-right-0 border-top-0 border-white py-1 mb-5">
   <a class="navbar-brand" href="/community/"><strong class="text-white">Jot down</strong></a>
